@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EC0000"><title>AMS / 12—16 SEP</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AMS Guide">
+<meta name="mobile-web-app-capable" content="yes">
+
+<style>
+:root{--red:#EC0000;--red2:#c60000;--ink:#111;--paper:#f7f5f0;--white:#fff;--muted:#6f6f72;--line:#dedbd4;--soft:#ece9e3;--black:#0d0d0e;--ok:#087f4f;--radius:22px;--shadow:0 12px 32px rgba(0,0,0,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;line-height:1.4;padding-bottom:92px}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.app{width:min(850px,100%);margin:auto}
+.topbar{position:sticky;top:0;z-index:40;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;background:rgba(247,245,240,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.07)}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:9px;font-weight:950;letter-spacing:-.04em}.flag{background:var(--red);color:#fff;padding:7px 9px;font-size:14px;letter-spacing:.12em;font-weight:950}.livechip{display:flex;align-items:center;gap:6px;border:1px solid #d4d0c8;background:white;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}.dot{width:7px;height:7px;background:var(--red);border-radius:50%}.main{padding:14px}
+.hero{background:var(--red);color:white;border-radius:28px;padding:21px 19px 18px;overflow:hidden;position:relative;box-shadow:var(--shadow)}.hero:after{content:"× × ×";position:absolute;right:-12px;bottom:-38px;font-size:80px;font-weight:1000;letter-spacing:-.14em;color:rgba(255,255,255,.14);white-space:nowrap}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;opacity:.78}.hero h1{font-size:36px;line-height:.95;letter-spacing:-.055em;margin:7px 0 12px;max-width:520px}.hero p{margin:0;max-width:590px;font-size:14px;opacity:.93}.hero-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;position:relative;z-index:2}.badge{background:white;color:#111;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900}.badge.ghost{background:transparent;border:1px solid rgba(255,255,255,.5);color:white}
+.section{display:none}.section:target,.section:has(:target){display:block}#home{display:block}.main:has(:target) #home:not(:target){display:none}
+.section-title{margin:24px 2px 10px}.section-title h2{font-size:27px;letter-spacing:-.045em;margin:0}.section-title p{font-size:13px;color:var(--muted);margin:3px 0 0}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:15px;box-shadow:0 2px 0 rgba(0,0,0,.015)}.card + .card{margin-top:10px}.black{background:var(--black);color:white;border-color:var(--black)}.red{background:var(--red);color:white;border-color:var(--red)}.soft{background:var(--soft)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--muted)}.black .kicker,.red .kicker{color:#bbb}.big{font-size:25px;font-weight:950;letter-spacing:-.045em;line-height:1.05;margin-top:3px}.meta{font-size:12px;color:var(--muted)}.black .meta,.red .meta{color:#bdbdbd}.desc{font-size:13px;color:#3e3e41;margin:8px 0 0}.black .desc,.red .desc{color:#e7e7e7}.row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.spread{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.btn{border:1px solid #d5d1c9;background:#fff;color:#111;border-radius:13px;padding:9px 11px;font-size:12px;font-weight:850;display:inline-flex;align-items:center;gap:6px}.btn.primary{background:var(--red);border-color:var(--red);color:#fff}.btn.dark{background:#111;border-color:#111;color:#fff}.btn.light{background:#fff;color:#111;border-color:white}.btn.ghost{background:transparent}.btn.tiny{padding:6px 8px;border-radius:10px;font-size:11px}.segment{display:flex;gap:7px;overflow:auto;scrollbar-width:none;padding:2px 0 7px}.segment::-webkit-scrollbar{display:none}.segment button{white-space:nowrap;border:1px solid #d8d4cc;background:#fff;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:800;color:#555}.segment button.active{background:#111;border-color:#111;color:#fff}
+.notice{border-radius:16px;background:#111;color:white;padding:13px 14px;margin-top:10px;font-size:13px}.notice.rednote{background:#fff0ef;color:#7d1111;border:1px solid #ffc3bd}.quickgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quick{min-height:94px;background:white;border:1px solid var(--line);border-radius:18px;padding:13px;text-align:left;display:block}.quick .icon{font-size:23px}.quick strong{display:block;font-size:14px;margin:5px 0 2px}.quick span{font-size:11px;color:#777}
+.daytabs{display:flex;gap:7px;overflow:auto;scrollbar-width:none;padding:1px 0 8px}.daytabs::-webkit-scrollbar{display:none}.daytab{min-width:70px;border:1px solid #d5d1c9;background:#fff;border-radius:16px;padding:9px 10px;text-align:left}.daytab b{display:block;font-size:13px}.daytab span{font-size:10px;color:#777}.daytab:active{background:var(--red);color:white;border-color:var(--red)}.day-block{scroll-margin-top:75px;margin-bottom:14px}.dayhero{background:#111;color:#fff;border-radius:22px;padding:16px;margin-bottom:10px}.dayhero h3{font-size:24px;letter-spacing:-.04em;margin:3px 0 6px}.dayhero p{margin:0;font-size:12px;color:#cfcfcf}.timeline{position:relative}.slot{display:grid;grid-template-columns:62px 1fr;gap:11px;padding:10px 0;position:relative}.time{font-size:12px;font-weight:950;color:var(--red);font-variant-numeric:tabular-nums;padding-top:1px}.slotbody{border-left:2px solid #e6e1da;padding-left:13px;padding-bottom:4px}.slot:last-child .slotbody{border-left-color:transparent}.slotbody b{font-size:14px}.slotbody p{font-size:12px;color:#666;margin:4px 0 7px}
+.search{width:100%;border:1px solid #d8d4cc;border-radius:15px;background:white;padding:12px 13px;color:#111;outline:none}.search:focus{border-color:var(--red)}.placegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.place{display:flex;flex-direction:column;min-height:250px;scroll-margin-top:75px}.place h3{font-size:19px;letter-spacing:-.03em;margin:7px 0 2px}.score{font-size:10px;background:#111;color:#fff;padding:5px 7px;border-radius:7px;font-weight:900;display:inline-flex}.score.redscore{background:var(--red)}.price{font-weight:900;color:#111}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.tag{font-size:10px;border-radius:999px;background:#f1efea;padding:5px 7px;color:#58585b;font-weight:700}.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px}.star{margin-left:auto;border:0;background:transparent;font-size:21px;color:#c4c1bb;padding:0}.star.saved{color:var(--red)}
+.coffee-card{position:relative;overflow:hidden;scroll-margin-top:75px}.coffee-card:after{content:"×";position:absolute;right:10px;top:-25px;color:#f1eeea;font-size:110px;font-weight:1000;z-index:0}.coffee-card>*{position:relative;z-index:1}.coffee-rank{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-size:11px;font-weight:950}.infobar{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.infochip{background:#f2f0eb;border-radius:12px;padding:8px}.infochip b{display:block;font-size:12px}.infochip span{font-size:9px;color:#777}.event{display:flex;gap:11px;align-items:flex-start}.datebox{min-width:50px;background:#111;color:#fff;border-radius:13px;padding:7px;text-align:center}.datebox b{display:block;font-size:17px;line-height:1}.datebox span{font-size:9px;text-transform:uppercase;letter-spacing:.08em}.event h3{font-size:16px;margin:0 0 3px}.event p{font-size:12px;color:#666;margin:5px 0 8px}.optionpill{font-size:9px;background:#f1efea;padding:4px 6px;border-radius:999px;font-weight:900}.route{display:grid;grid-template-columns:34px 1fr;gap:9px;padding:10px 0;border-bottom:1px solid #ece8e1}.route:last-child{border:0}.rnum{width:27px;height:27px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:950}.listrow{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #ece8e1;font-size:12px}.listrow:last-child{border:0}.fine{font-size:10px;color:#777}.safe{border-left:3px solid var(--red);padding-left:10px}
+.navbar{position:fixed;z-index:50;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-top:1px solid #ddd9d2;padding:6px 7px calc(6px + env(safe-area-inset-bottom))}.navinner{width:min(700px,100%);margin:auto;display:grid;grid-template-columns:repeat(6,1fr);gap:2px}.navbtn{border:0;background:transparent;border-radius:12px;padding:6px 2px;color:#777;font-size:9px;font-weight:900;text-align:center}.navbtn .ico{display:block;font-size:18px;line-height:1.1;margin-bottom:2px}.navbtn:active{color:var(--red);background:#fff0ef}.toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%);background:#111;color:#fff;padding:9px 12px;border-radius:999px;font-size:11px;font-weight:900;z-index:90}
+@media(max-width:650px){.main{padding:11px}.hero{border-radius:22px}.hero h1{font-size:32px}.grid2,.grid3,.placegrid{grid-template-columns:1fr}.quickgrid{grid-template-columns:1fr 1fr}.place{min-height:auto}.card{border-radius:18px}.section-title{margin-top:20px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar"><div class="topline"><a class="brand" href="#home"><span class="flag">× × ×</span><span>AMS / FIELD GUIDE</span></a><div class="livechip"><span class="dot"></span><span>12—16 SEP</span></div></div></header>
+<main class="main">
+<section id="home" class="section">
+<div class="hero"><div class="eyebrow">Leo + 1 · Amsterdam Noord</div><h1>Spendete bene il tempo.</h1><p>Arte, architettura, design, vino, birra, coffeeshop selezionati e nightlife. Una guida costruita per chi Amsterdam l’ha già vista.</p><div class="hero-row"><span class="badge">12 → 16 settembre</span><span class="badge ghost">Bob W Noord</span><span class="badge ghost">2 persone</span></div></div>
+<div class="section-title"><h2>La prossima mossa</h2><p>Apri direttamente il giorno del viaggio.</p></div>
+<div class="card black"><div class="kicker">SMART TRIP</div><div class="big">Itinerario 12—16</div><p class="desc">Tutto il viaggio è già organizzato in blocchi realistici. Apri DAYS e scegli il giorno.</p><a class="btn tiny light" style="margin-top:10px" href="#days">Apri il giorno</a></div>
+<div class="section-title"><h2>Cosa avete voglia di fare?</h2></div>
+<div class="quickgrid">
+<a class="quick" href="#place-klepel"><span class="icon">🍷</span><strong>Vino + cena</strong><span>Carta vini, cucina, atmosfera</span></a>
+<a class="quick" href="#place-nxt"><span class="icon">◼</span><strong>Arte + design</strong><span>Contemporaneo, architettura</span></a>
+<a class="quick" href="#place-walhalla"><span class="icon">≈</span><strong>Chill + Noord</strong><span>Acqua, birra, locali del quartiere</span></a>
+<a class="quick" href="#night"><span class="icon">●</span><strong>Uscire</strong><span>Serate che valgono davvero</span></a>
+<a class="quick" href="#coffee-sib"><span class="icon">✦</span><strong>Coffeeshop</strong><span>Più local, meno gimmick</span></a>
+<a class="quick" href="#place-eye"><span class="icon">↗</span><strong>2 ore libere</strong><span>Una deviazione con senso</span></a>
+</div>
+<div class="section-title"><h2>Tre cose da decidere prima</h2></div>
+<div class="grid3">
+<div class="card"><div class="kicker">01 · ARRIVO</div><div class="big">Treno > bus</div><p class="desc">EIN → Eindhoven Centraal → Amsterdam Centraal.</p><a class="btn tiny primary" href="#move">Percorso</a></div>
+<div class="card"><div class="kicker">02 · BICI</div><div class="big">48h utili</div><p class="desc">Noord e Oost acquistano molto più senso su due ruote.</p><a class="btn tiny primary" href="#move">Noleggi</a></div>
+<div class="card"><div class="kicker">03 · SABATO</div><div class="big">Shelter</div><p class="desc">Con il vostro volo, è la serata più forte e logisticamente più pulita.</p><a class="btn tiny primary" href="#night">Night</a></div>
+</div>
+</section>
+
+<section id="days" class="section">
+<div class="section-title"><h2>Giorno per giorno</h2><p>Un itinerario con ritmo realistico e alternative.</p></div>
+<div class="daytabs"><a class="daytab" href="#day-12"><b>Sab 12</b><span>arrivo</span></a><a class="daytab" href="#day-13"><b>Dom 13</b><span>architecture</span></a><a class="daytab" href="#day-14"><b>Lun 14</b><span>Noord</span></a><a class="daytab" href="#day-15"><b>Mar 15</b><span>wine + city</span></a><a class="daytab" href="#day-16"><b>Mer 16</b><span>departure</span></a></div><article class="day-block" id="day-12">
+<div class="dayhero"><div class="eyebrow">Sab 12</div><h3>Atterrare bene, non correre</h3><p>Il primo obiettivo è arrivare a Noord senza stress. La notte può essere forte, la sera non deve esserlo.</p></div>
+<div class="card timeline"><div class="slot"><div class="time">17:40</div><div class="slotbody"><b>Volo Pisa → Eindhoven</b><p>Partenza da PSA.</p></div></div><div class="slot"><div class="time">19:35</div><div class="slotbody"><b>Atterraggio EIN</b><p>Uscita rapida; niente FlixBus stretto se rischia di farvi correre.</p></div></div><div class="slot"><div class="time">20:10</div><div class="slotbody"><b>400/401 → Eindhoven Centraal</b><p>Poi Intercity diretto per Amsterdam.</p></div></div><div class="slot"><div class="time">22:00</div><div class="slotbody"><b>Centraal → Noord → Bob W</b><p>Ferry F4/F3 e check-in.</p></div></div><div class="slot"><div class="time">23:00</div><div class="slotbody"><b>Shelter</b><p>Se avete energia: Andrew Azara + Traumer b2b Janeret.</p></div></div></div>
+</article>
+<article class="day-block" id="day-13">
+<div class="dayhero"><div class="eyebrow">Dom 13</div><h3>Amsterdam che normalmente non si vede</h3><p>Open Monument Day è il vero vantaggio competitivo di questa giornata. Tenete libero il pomeriggio per NDSM.</p></div>
+<div class="card timeline"><div class="slot"><div class="time">10:00</div><div class="slotbody"><b>Open Monument Day</b><p>Scegliete 2–3 edifici dal programma ufficiale: qualità > quantità.</p></div></div><div class="slot"><div class="time">13:00</div><div class="slotbody"><b>Jordaan / pranzo leggero</b><p>Restate nella fascia occidentale del centro.</p></div></div><div class="slot"><div class="time">14:30</div><div class="slotbody"><b>Siberië · opzionale</b><p>Brouwersgracht: pausa coerente con il quartiere.</p></div></div><div class="slot"><div class="time">15:30</div><div class="slotbody"><b>Ferry → NDSM</b><p>Rientrate nel vostro lato della città.</p></div></div><div class="slot"><div class="time">16:00</div><div class="slotbody"><b>Fringe + STRAAT / NDSM</b><p>Ultimo giorno Fringe, street art e distretto industriale.</p></div></div><div class="slot"><div class="time">18:30</div><div class="slotbody"><b>Tramonto / birra</b><p>Pllek se volete waterfront; Oedipus se volete più local.</p></div></div><div class="slot"><div class="time">20:30</div><div class="slotbody"><b>Cena</b><p>Cornerstore; alternativa Coba o Café Modern.</p></div></div></div>
+</article>
+<article class="day-block" id="day-14">
+<div class="dayhero"><div class="eyebrow">Lun 14</div><h3>Design, acqua e bici</h3><p>La giornata in cui ha più senso vivere Noord come quartiere, non come periferia dell’hotel.</p></div>
+<div class="card timeline"><div class="slot"><div class="time">10:00</div><div class="slotbody"><b>Noleggio bici</b><p>NDSM Bikes o TIP Noord.</p></div></div><div class="slot"><div class="time">10:30</div><div class="slotbody"><b>EYE + Overhoeks</b><p>Architettura, IJ, caffè.</p></div></div><div class="slot"><div class="time">12:30</div><div class="slotbody"><b>Asterweg / Nxt Museum</b><p>Media art e architettura contemporanea.</p></div></div><div class="slot"><div class="time">15:00</div><div class="slotbody"><b>Walhalla Taproom</b><p>Una birra e pausa nel cluster Asterweg.</p></div></div><div class="slot"><div class="time">16:30</div><div class="slotbody"><b>FC Hyena / waterfront</b><p>Cinema arthouse, wine bar o pedalata lungo l’acqua.</p></div></div><div class="slot"><div class="time">19:30</div><div class="slotbody"><b>Cena vino</b><p>De Klepel; Choux se volete la cena gastronomica.</p></div></div><div class="slot"><div class="time">23:00</div><div class="slotbody"><b>Cheeky Monday · opzionale</b><p>Jungle/DnB al Melkweg.</p></div></div></div>
+</article>
+<article class="day-block" id="day-15">
+<div class="dayhero"><div class="eyebrow">Mar 15</div><h3>De Pijp → Oud-West → vino</h3><p>Ultima giornata piena: meno “attrazioni”, più quartieri, tavoli e atmosfera.</p></div>
+<div class="card timeline"><div class="slot"><div class="time">10:30</div><div class="slotbody"><b>De Pijp senza checklist</b><p>Vie laterali, design shop e caffè.</p></div></div><div class="slot"><div class="time">12:00</div><div class="slotbody"><b>Katsu · opzionale</b><p>Il coffeeshop più naturale da integrare in De Pijp.</p></div></div><div class="slot"><div class="time">13:00</div><div class="slotbody"><b>Pranzo / GlouGlou</b><p>Pranzo leggero e poi un calice.</p></div></div><div class="slot"><div class="time">15:30</div><div class="slotbody"><b>Oud-West</b><p>Ten Katemarkt, negozi, design, passeggiata.</p></div></div><div class="slot"><div class="time">18:00</div><div class="slotbody"><b>Bar Centraal / Binnenvisser</b><p>Aperitivo che può diventare cena.</p></div></div><div class="slot"><div class="time">20:00</div><div class="slotbody"><b>Scegliete il finale</b><p>Jacob Collier al Carré oppure cena lunga.</p></div></div><div class="slot"><div class="time">23:30</div><div class="slotbody"><b>Techno Tuesday · opzionale</b><p>Melkweg se volete chiudere ballando.</p></div></div></div>
+</article>
+<article class="day-block" id="day-16">
+<div class="dayhero"><div class="eyebrow">Mer 16</div><h3>Zero programmi. Solo uscire bene.</h3><p>Con il volo delle 13:10 non metterei attività. Colazione, check-out e trasferimento.</p></div>
+<div class="card timeline"><div class="slot"><div class="time">07:30</div><div class="slotbody"><b>Sveglia + colazione</b><p>Chiudete bagagli e controllate NS/GVB.</p></div></div><div class="slot"><div class="time">08:15</div><div class="slotbody"><b>Partenza Bob W</b><p>Ferry verso Centraal.</p></div></div><div class="slot"><div class="time">~09:00</div><div class="slotbody"><b>Intercity → Eindhoven</b><p>Prendete un treno che vi lasci margine.</p></div></div><div class="slot"><div class="time">~10:25</div><div class="slotbody"><b>400/401 → aeroporto</b><p>Ultimo tratto.</p></div></div><div class="slot"><div class="time">10:45</div><div class="slotbody"><b>Eindhoven Airport</b><p>Target prudente.</p></div></div><div class="slot"><div class="time">13:10</div><div class="slotbody"><b>EIN → PSA</b><p>Arrivo a Pisa 14:55.</p></div></div></div>
+</article>
+</section>
+
+<section id="explore" class="section">
+<div class="section-title"><h2>Explore</h2><p>Food, wine, arte, design, birra e spot da locals.</p></div>
+<input class="search" id="placeSearch" placeholder="Cerca vino, Noord, arte, birra...">
+<div class="segment" id="placeFilters" style="margin-top:8px">
+<button class="active" type="button" data-f="all">Tutto</button><button type="button" data-f="wine">Vino</button><button type="button" data-f="food">Cena</button><button type="button" data-f="art">Arte</button><button type="button" data-f="design">Design</button><button type="button" data-f="beer">Birra</button><button type="button" data-f="noord">Noord</button><button type="button" data-f="locals">Local</button>
+</div><div class="placegrid" id="placesGrid"><article class="card place" id="place-corner" data-tags="wine food noord locals design" data-search="cornerstore noord · papaverweg 11 wine food noord locals design">
+<div class="spread"><div><span class="score">TOP FIT</span><h3>Cornerstore</h3></div><button class="star" type="button" data-save="corner" aria-label="Salva Cornerstore">★</button></div>
+<div class="meta">Noord · Papaverweg 11 · <span class="price">€€€</span></div>
+<p class="desc">Asian-inspired, natural wine e vinili. Weekend DJ/listening-bar energy. Vicinissimo al Bob W.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">noord</span><span class="tag">locals</span><span class="tag">design</span></div>
+<p class="fine"><b>Per voi:</b> Cena + vino + musica senza attraversare la città.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Cornerstore%2C%20Papaverweg%2011%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.cornerstoreamsterdam.com/">Sito</a></div>
+</article>
+<article class="card place" id="place-klepel" data-tags="wine food locals" data-search="café de klepel jordaan · prinsenstraat 22 wine food locals">
+<div class="spread"><div><span class="score">WINE 9.5</span><h3>Café De Klepel</h3></div><button class="star" type="button" data-save="klepel" aria-label="Salva Café De Klepel">★</button></div>
+<div class="meta">Jordaan · Prinsenstraat 22 · <span class="price">€€€</span></div>
+<p class="desc">Bistrot moderno con vino al centro dell’esperienza. Intimo e adulto.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Una delle cene più coerenti con la vostra passione per il vino.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Cafe%20De%20Klepel%2C%20Prinsenstraat%2022%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.cafedeklepel.nl/">Sito</a></div>
+</article>
+<article class="card place" id="place-choux" data-tags="wine food locals" data-search="choux centraal · de ruijterkade 128 wine food locals">
+<div class="spread"><div><span class="score">WINE 10</span><h3>Choux</h3></div><button class="star" type="button" data-save="choux" aria-label="Salva Choux">★</button></div>
+<div class="meta">Centraal · De Ruijterkade 128 · <span class="price">€€€€</span></div>
+<p class="desc">Vegetable-forward e natural wine. Pairing pensati con la stessa cura della cucina.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> La cena gastronomica del viaggio.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Choux%2C%20De%20Ruijterkade%20128%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://choux.nl/">Sito</a></div>
+</article>
+<article class="card place" id="place-binnen" data-tags="wine food locals" data-search="café binnenvisser oud-west · bilderdijkstraat 36 wine food locals">
+<div class="spread"><div><span class="score">VIBE 9</span><h3>Café Binnenvisser</h3></div><button class="star" type="button" data-save="binnen" aria-label="Salva Café Binnenvisser">★</button></div>
+<div class="meta">Oud-West · Bilderdijkstraat 36 · <span class="price">€€€</span></div>
+<p class="desc">Natural wine, luci basse, cucina stagionale, ambiente vivo senza essere clubby.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Vino serio in una serata non formale.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Cafe%20Binnenvisser%2C%20Bilderdijkstraat%2036%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://binnenvisser.nl/">Sito</a></div>
+</article>
+<article class="card place" id="place-centraal" data-tags="wine food locals" data-search="bar centraal oud-west · ten katestraat 16 wine food locals">
+<div class="spread"><div><span class="score">LOCAL</span><h3>Bar Centraal</h3></div><button class="star" type="button" data-save="centraal" aria-label="Salva Bar Centraal">★</button></div>
+<div class="meta">Oud-West · Ten Katestraat 16 · <span class="price">€€–€€€</span></div>
+<p class="desc">Natural wine e piatti contemporanei vicino a Ten Katemarkt.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Ottimo per aperitivo lungo o cena informale.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Bar%20Centraal%2C%20Ten%20Katestraat%2016%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://barcentraal.com/">Sito</a></div>
+</article>
+<article class="card place" id="place-glou" data-tags="wine locals" data-search="glouglou de pijp · tweede v.d. helststraat 3 wine locals">
+<div class="spread"><div><span class="score">NATURAL</span><h3>GlouGlou</h3></div><button class="star" type="button" data-save="glou" aria-label="Salva GlouGlou">★</button></div>
+<div class="meta">De Pijp · Tweede v.d. Helststraat 3 · <span class="price">€€</span></div>
+<p class="desc">Un riferimento cittadino per vino naturale, con molti calici e atmosfera easy.</p><div class="tags"><span class="tag">wine</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Il posto da inserire in un pomeriggio a De Pijp.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=GlouGlou%2C%20Tweede%20van%20der%20Helststraat%203%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://glouglou.nl/">Sito</a></div>
+</article>
+<article class="card place" id="place-coba" data-tags="wine food noord locals design" data-search="coba noord · schaafstraat 4 wine food noord locals design">
+<div class="spread"><div><span class="score">NOORD</span><h3>Coba</h3></div><button class="star" type="button" data-save="coba" aria-label="Salva Coba">★</button></div>
+<div class="meta">Noord · Schaafstraat 4 · <span class="price">€€€</span></div>
+<p class="desc">Tacos/ceviche in spazio industriale, tequila e natural wine.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">noord</span><span class="tag">locals</span><span class="tag">design</span></div>
+<p class="fine"><b>Per voi:</b> Cena vivace, non impostata, nel vostro lato della città.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Coba%2C%20Schaafstraat%204%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://coba-taqueria.com/">Sito</a></div>
+</article>
+<article class="card place" id="place-fchyena" data-tags="wine food art noord locals" data-search="fc hyena noord · aambeeldstraat 24 wine food art noord locals">
+<div class="spread"><div><span class="score">LOCAL HYBRID</span><h3>FC Hyena</h3></div><button class="star" type="button" data-save="fchyena" aria-label="Salva FC Hyena">★</button></div>
+<div class="meta">Noord · Aambeeldstraat 24 · <span class="price">€–€€</span></div>
+<p class="desc">Arthouse cinema, piccolo ristorante e wine bar. Format molto Amsterdam-Noord.</p><div class="tags"><span class="tag">wine</span><span class="tag">food</span><span class="tag">art</span><span class="tag">noord</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Perfetto per un pomeriggio o una serata diversa.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FC%20Hyena%2C%20Aambeeldstraat%2024%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://fchyena.nl/">Sito</a></div>
+</article>
+<article class="card place" id="place-straat" data-tags="art design noord" data-search="straat museum ndsm · ndsm-plein 1 art design noord">
+<div class="spread"><div><span class="score">ART</span><h3>STRAAT Museum</h3></div><button class="star" type="button" data-save="straat" aria-label="Salva STRAAT Museum">★</button></div>
+<div class="meta">NDSM · NDSM-Plein 1 · <span class="price">€€</span></div>
+<p class="desc">Street art e graffiti in scala industriale. Ha senso anche se conoscete già Amsterdam.</p><div class="tags"><span class="tag">art</span><span class="tag">design</span><span class="tag">noord</span></div>
+<p class="fine"><b>Per voi:</b> Vicinissimo a Bob W e visivamente molto forte.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=STRAAT%20Museum%2C%20NDSM-Plein%201%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://straatmuseum.com/">Sito</a></div>
+</article>
+<article class="card place" id="place-nxt" data-tags="art design noord" data-search="nxt museum noord · asterweg 22 art design noord">
+<div class="spread"><div><span class="score">NEW MEDIA</span><h3>Nxt Museum</h3></div><button class="star" type="button" data-save="nxt" aria-label="Salva Nxt Museum">★</button></div>
+<div class="meta">Noord · Asterweg 22 · <span class="price">€€</span></div>
+<p class="desc">Media art, installazioni immersive e tecnologia.</p><div class="tags"><span class="tag">art</span><span class="tag">design</span><span class="tag">noord</span></div>
+<p class="fine"><b>Per voi:</b> Contemporaneo e design più che museo “da checklist”.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nxt%20Museum%2C%20Asterweg%2022%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://nxtmuseum.com/">Sito</a></div>
+</article>
+<article class="card place" id="place-eye" data-tags="art design noord" data-search="eye filmmuseum noord · ijpromenade 1 art design noord">
+<div class="spread"><div><span class="score">ARCH</span><h3>EYE Filmmuseum</h3></div><button class="star" type="button" data-save="eye" aria-label="Salva EYE Filmmuseum">★</button></div>
+<div class="meta">Noord · IJpromenade 1 · <span class="price">€–€€</span></div>
+<p class="desc">Uno degli edifici contemporanei più riconoscibili sul waterfront, con cinema, mostre e bar.</p><div class="tags"><span class="tag">art</span><span class="tag">design</span><span class="tag">noord</span></div>
+<p class="fine"><b>Per voi:</b> Architettura + paesaggio + pausa.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=EYE%20Filmmuseum%2C%20IJpromenade%201%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.eyefilm.nl/">Sito</a></div>
+</article>
+<article class="card place" id="place-walhalla" data-tags="beer noord locals" data-search="walhalla taproom noord · asterweg 2 beer noord locals">
+<div class="spread"><div><span class="score">BEER</span><h3>Walhalla Taproom</h3></div><button class="star" type="button" data-save="walhalla" aria-label="Salva Walhalla Taproom">★</button></div>
+<div class="meta">Noord · Asterweg 2 · <span class="price">€</span></div>
+<p class="desc">Taproom con molte birre alla spina e terrazza: pausa ideale dopo Nxt/Asterweg.</p><div class="tags"><span class="tag">beer</span><span class="tag">noord</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Una birra locale nel quartiere giusto.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Walhalla%20Brouwerij%2C%20Asterweg%202%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.walhallacraftbeer.nl/taproom-proeflokaal/">Sito</a></div>
+</article>
+<article class="card place" id="place-oedipus" data-tags="beer food noord locals" data-search="oedipus craft space noord · schaafstraat 21 beer food noord locals">
+<div class="spread"><div><span class="score">BEER+</span><h3>Oedipus Craft Space</h3></div><button class="star" type="button" data-save="oedipus" aria-label="Salva Oedipus Craft Space">★</button></div>
+<div class="meta">Noord · Schaafstraat 21 · <span class="price">€–€€</span></div>
+<p class="desc">Birrificio, taproom, food, palco e community space.</p><div class="tags"><span class="tag">beer</span><span class="tag">food</span><span class="tag">noord</span><span class="tag">locals</span></div>
+<p class="fine"><b>Per voi:</b> Più hub creativo che semplice birreria.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Oedipus%20Brewing%2C%20Schaafstraat%2021%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://oedipus.com/pages/visit-us-main">Sito</a></div>
+</article>
+<article class="card place" id="place-pllek" data-tags="food beer noord" data-search="pllek ndsm waterfront food beer noord">
+<div class="spread"><div><span class="score">SUNSET</span><h3>Pllek</h3></div><button class="star" type="button" data-save="pllek" aria-label="Salva Pllek">★</button></div>
+<div class="meta">NDSM waterfront · <span class="price">€–€€</span></div>
+<p class="desc">Ampio waterfront; non segreto, ma molto funzionale al tramonto.</p><div class="tags"><span class="tag">food</span><span class="tag">beer</span><span class="tag">noord</span></div>
+<p class="fine"><b>Per voi:</b> Usatelo per decompressing, non come “attrazione”.</p>
+<div class="actions"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pllek%2C%20T.T.%20Neveritaweg%2059%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://pllek.nl/">Sito</a></div>
+</article></div>
+</section>
+
+<section id="coffee" class="section">
+<div class="section-title"><h2>Coffeeshop, senza cliché</h2><p>Scelti per atmosfera, quartiere, reputazione e feedback della community.</p></div>
+<div class="notice rednote"><b>Idea di fondo:</b> niente tour dei coffeeshop. Inseritene uno nel quartiere che state già vivendo.</div>
+<div style="margin-top:10px"><article class="card coffee-card" id="coffee-sib">
+<div class="spread"><div class="row"><span class="coffee-rank">1</span><div><b style="font-size:17px">Coffeeshop Siberië</b><div class="meta">Brouwersgracht 11</div></div></div><span class="score redscore">10/10</span></div>
+<p class="desc">Il nome che emerge più spesso quando si cerca qualità + atmosfera rilassata. Meno gimmick, staff apprezzato e posizione comoda tra Centraal e Jordaan.</p>
+<div class="infobar"><div class="infochip"><b>4.7 · 2.2k+ recensioni</b><span>rating indicativo</span></div><div class="infochip"><b>08:00–01:00</b><span>orari indicativi</span></div><div class="infochip"><b>Chill / old-school</b><span>vibe</span></div></div>
+<p class="fine"><b>Come usarlo:</b> Inseritelo il 13 dopo Open Monument Day oppure il 15 prima di Oud-West.</p>
+<a class="btn tiny primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Coffeeshop%20Siberi%C3%AB%2C%20Brouwersgracht%2011%2C%20Amsterdam">Apri Maps</a>
+</article>
+<article class="card coffee-card" id="coffee-oost">
+<div class="spread"><div class="row"><span class="coffee-rank">2</span><div><b style="font-size:17px">Coffeeshop Oost</b><div class="meta">Derde Oosterparkstraat 73H</div></div></div><span class="score redscore">9.5/10</span></div>
+<p class="desc">Fuori dal circuito più turistico, in Oost. Valutazioni molto alte e citato spesso da frequentatori abituali.</p>
+<div class="infobar"><div class="infochip"><b>4.9 · 590+ recensioni</b><span>rating indicativo</span></div><div class="infochip"><b>09:00–00:00</b><span>orari indicativi</span></div><div class="infochip"><b>Neighborhood</b><span>vibe</span></div></div>
+<p class="fine"><b>Come usarlo:</b> Ha senso se esplorate Oost; non attraversate la città solo per fare “collection”.</p>
+<a class="btn tiny primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Coffeeshop%20Oost%2C%20Derde%20Oosterparkstraat%2073H%2C%20Amsterdam">Apri Maps</a>
+</article>
+<article class="card coffee-card" id="coffee-ballon">
+<div class="spread"><div class="row"><span class="coffee-rank">3</span><div><b style="font-size:17px">Het Ballonnetje</b><div class="meta">Roetersstraat 12</div></div></div><span class="score redscore">9/10</span></div>
+<p class="desc">Piccolo, storico e molto citato dalla community. Posizione universitaria/Oost più autentica del centro iperturistico.</p>
+<div class="infobar"><div class="infochip"><b>4.6 · 1k+ recensioni</b><span>rating indicativo</span></div><div class="infochip"><b>09:00–00:00</b><span>orari indicativi</span></div><div class="infochip"><b>Local / compact</b><span>vibe</span></div></div>
+<p class="fine"><b>Come usarlo:</b> Buona deviazione da Plantage, Artis o Oost.</p>
+<a class="btn tiny primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Coffeeshop%20Het%20Ballonnetje%2C%20Roetersstraat%2012%2C%20Amsterdam">Apri Maps</a>
+</article>
+<article class="card coffee-card" id="coffee-katsu">
+<div class="spread"><div class="row"><span class="coffee-rank">4</span><div><b style="font-size:17px">Katsu</b><div class="meta">Eerste v.d. Helststraat 70</div></div></div><span class="score redscore">8.5/10</span></div>
+<p class="desc">Un classico di De Pijp con identità propria e atmosfera più da quartiere che da “weed tourism”.</p>
+<div class="infobar"><div class="infochip"><b>4.6 · 4.4k+ recensioni</b><span>rating indicativo</span></div><div class="infochip"><b>~10:00–00:00</b><span>orari indicativi</span></div><div class="infochip"><b>De Pijp / arty</b><span>vibe</span></div></div>
+<p class="fine"><b>Come usarlo:</b> Perfetto il 15 insieme a GlouGlou e De Pijp.</p>
+<a class="btn tiny primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Katsu%20Coffeeshop%2C%20Eerste%20van%20der%20Helststraat%2070%2C%20Amsterdam">Apri Maps</a>
+</article>
+<article class="card coffee-card" id="coffee-solo">
+<div class="spread"><div class="row"><span class="coffee-rank">5</span><div><b style="font-size:17px">Coffeeshop SOLO</b><div class="meta">Korte Koningsstraat 2</div></div></div><span class="score redscore">8.5/10</span></div>
+<p class="desc">Centrale ma generalmente meno caotico delle insegne più famose. Recenti feedback citano una lounge piacevole.</p>
+<div class="infobar"><div class="infochip"><b>4.7 · 1.6k+ recensioni</b><span>rating indicativo</span></div><div class="infochip"><b>09:00–00:00</b><span>orari indicativi</span></div><div class="infochip"><b>Quiet center</b><span>vibe</span></div></div>
+<p class="fine"><b>Come usarlo:</b> Fallback pratico quando siete in centro ma non volete un posto “da souvenir”.</p>
+<a class="btn tiny primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Coffeeshop%20SOLO%2C%20Korte%20Koningsstraat%202%2C%20Amsterdam">Apri Maps</a>
+</article>
+<article class="card coffee-card" id="coffee-tk">
+<div class="spread"><div class="row"><span class="coffee-rank">6</span><div><b style="font-size:17px">Tweede Kamer</b><div class="meta">Heisteeg 6</div></div></div><span class="score redscore">8/10</span></div>
+<p class="desc">Storico, piccolo e molto centrale. Più “istituzione” che posto per passare due ore.</p>
+<div class="infobar"><div class="infochip"><b>4.5 · 1.1k+ recensioni</b><span>rating indicativo</span></div><div class="infochip"><b>08:00–00:45</b><span>orari indicativi</span></div><div class="infochip"><b>Tiny / old-school</b><span>vibe</span></div></div>
+<p class="fine"><b>Come usarlo:</b> Andateci se siete già tra Spui e Jordaan; evitatelo nelle ore di punta se volete sedervi.</p>
+<a class="btn tiny primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tweede%20Kamer%20Coffeeshop%2C%20Heisteeg%206%2C%20Amsterdam">Apri Maps</a>
+</article></div>
+<div class="section-title"><h2>Regole essenziali</h2></div>
+<div class="card"><div class="safe"><b>18+ e documento.</b><p class="desc">Nel centro di Amsterdam è vietato fumare cannabis in pubblico: usate coffeeshop autorizzati e rispettate sempre le regole del locale.</p></div><p class="fine">Questa sezione è una guida ai locali, non un invito al consumo. Orari e policy possono cambiare.</p></div>
+</section>
+
+<section id="night" class="section">
+<div class="section-title"><h2>Night & events</h2><p>12–15 settembre: eventi da scegliere in base al mood.</p></div><article class="card event">
+<div class="datebox"><span>SAB</span><b>12</b><span>SEP</span></div>
+<div style="flex:1"><div class="spread"><div><h3>Shelter · Andrew Azara / Traumer b2b Janeret</h3><div class="meta">23:00 · Overhoeksplein · Noord</div></div><span class="optionpill">10/10</span></div>
+<p>La serata più coerente con arrivo e hotel: underground, sound serio, nessun attraversamento inutile della città.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shelter%20Amsterdam%2C%20Overhoeksplein%203%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.artistguide.nl/events.p/?idlocation=9071&language=en">Info</a></div></div>
+</article>
+<article class="card event">
+<div class="datebox"><span>DOM</span><b>13</b><span>SEP</span></div>
+<div style="flex:1"><div class="spread"><div><h3>Open Monument Day</h3><div class="meta">10:00–17:00 · 50+ location</div></div><span class="optionpill">10/10</span></div>
+<p>Aperture speciali di edifici normalmente non visitabili. Per chi conosce già Amsterdam vale più di molte attrazioni standard.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Amsterdam%20Centrum">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.iamsterdam.com/en/whats-on/calendar/festivals/events/open-monument-day">Info</a></div></div>
+</article>
+<article class="card event">
+<div class="datebox"><span>DOM</span><b>13</b><span>SEP</span></div>
+<div style="flex:1"><div class="spread"><div><h3>Amsterdam Fringe @ NDSM</h3><div class="meta">ultimo giorno · Treehouse + Blokloods NDSM</div></div><span class="optionpill">9/10</span></div>
+<p>Performance, teatro e danza sperimentale dentro il vostro quartiere-base.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Treehouse%20NDSM%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.ndsm.nl/en">Info</a></div></div>
+</article>
+<article class="card event">
+<div class="datebox"><span>LUN</span><b>14</b><span>SEP</span></div>
+<div style="flex:1"><div class="spread"><div><h3>Cheeky Monday · Selecta J-Man</h3><div class="meta">23:00 · Melkweg</div></div><span class="optionpill">7/10</span></div>
+<p>Storica serata jungle/DnB. È una vera istituzione del lunedì, ma sceglietela solo se avete ancora energia.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Melkweg%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.hiddenagenda.nl/all-events/cheeky-monday%3A-selecta-j-man%21">Info</a></div></div>
+</article>
+<article class="card event">
+<div class="datebox"><span>MAR</span><b>15</b><span>SEP</span></div>
+<div style="flex:1"><div class="spread"><div><h3>Techno Tuesday · Chafa & Dexon</h3><div class="meta">23:30 · Melkweg</div></div><span class="optionpill">7/10</span></div>
+<p>Chiusura facile e low-cost del viaggio se volete ballare anche martedì.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Melkweg%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://muziekladder.nl/en/muziek/1-Amsterdam/agenda-7.html">Info</a></div></div>
+</article>
+<article class="card event">
+<div class="datebox"><span>MAR</span><b>15</b><span>SEP</span></div>
+<div style="flex:1"><div class="spread"><div><h3>Jacob Collier · The Light For Days Tour</h3><div class="meta">20:00 · Carré</div></div><span class="optionpill">8/10</span></div>
+<p>Alternativa più “evento” che club: concerto in una venue iconica, prima di eventuale after.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Royal%20Theater%20Carre%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://www.artistguide.nl/events.p?date=15-09-2026&language=en">Info</a></div></div>
+</article>
+</section>
+
+<section id="move" class="section">
+<div class="section-title"><h2>Move</h2><p>Aeroporto, ferry, bici e rientro del 16.</p></div>
+<div class="card red"><div class="kicker">12 SET · ANDATA</div><div class="big">PSA 17:40 → EIN 19:35</div><p class="desc">Airport Shuttle 400/401 → Eindhoven Centraal → Intercity diretto → Amsterdam Centraal → ferry verso Noord.</p></div>
+<div class="card">
+<div class="route"><div class="rnum">1</div><div><b>~20:10 · Bus 400/401</b><div class="meta">Eindhoven Airport → Centraal · circa 20–25 min</div></div></div>
+<div class="route"><div class="rnum">2</div><div><b>~20:40 · Intercity</b><div class="meta">Eindhoven Centraal → Amsterdam Centraal · circa 1h17</div></div></div>
+<div class="route"><div class="rnum">3</div><div><b>~22:00 · Ferry</b><div class="meta">F4 verso NDSM oppure F3 verso Buiksloterweg · gratuito</div></div></div>
+<div class="row" style="margin-top:10px"><a class="btn primary" target="_blank" rel="noopener" href="https://www.ns.nl/en/journeyplanner/">NS Journey Planner</a><a class="btn" target="_blank" rel="noopener" href="https://www.transdev.nl/en/our-routes/special-routes/airport-shuttle-eindhoven">Airport Shuttle</a></div>
+</div>
+<div class="section-title"><h2>16 settembre · ritorno</h2></div>
+<div class="card black"><div class="kicker">EIN 13:10 → PSA 14:55</div><div class="big">Partite da Bob W ~08:15</div><p class="desc">Obiettivo: Eindhoven Airport 10:45–11:00.</p><div class="listrow"><span>Bob W → Centraal</span><b>08:15–08:45</b></div><div class="listrow"><span>Intercity verso Eindhoven</span><b>entro ~09:00</b></div><div class="listrow"><span>Bus aeroporto</span><b>~10:25</b></div><div class="listrow"><span>Target arrivo EIN</span><b>10:45–11:00</b></div></div>
+<div class="section-title"><h2>Bici</h2></div>
+<div class="grid2">
+<div class="card"><div class="kicker">VICINO A VOI</div><div class="big">NDSM Bikes</div><p class="desc">NDSM-Plein 8. City bike da circa €20/24h.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=NDSM%20Bikes%2C%20NDSM-Plein%208%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://ndsmbikes.nl/en/bike-rental/">Sito</a></div></div>
+<div class="card"><div class="kicker">VALUE</div><div class="big">TIP Noord</div><p class="desc">IJpromenade 2. Circa €15,50/24h, €28/48h, €39,50/72h.</p><div class="row"><a class="btn tiny" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=TIP%20Amsterdam%20North%2C%20IJpromenade%202%2C%20Amsterdam">Maps</a><a class="btn tiny" target="_blank" rel="noopener" href="https://bikerentalamsterdamnorth.nl/en/bike-rental/">Sito</a></div></div>
+</div>
+<div class="section-title"><h2>Trasporto urbano</h2></div>
+<div class="card"><div class="listrow"><span><b>Ferry F4</b><br><small>NDSM ↔ Centraal</small></span><span>gratis</span></div><div class="listrow"><span><b>Ferry F3</b><br><small>Buiksloterweg ↔ Centraal</small></span><span>gratis / notturno</span></div><div class="listrow"><span><b>OVpay</b><br><small>tram, metro, bus, treno</small></span><span>contactless</span></div><div class="row" style="margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://www.gvb.nl/en">GVB</a><a class="btn" target="_blank" rel="noopener" href="https://www.gvb.nl/en/Payment-options">OVpay</a></div></div>
+</section>
+</main></div>
+
+<nav class="navbar"><div class="navinner">
+<a class="navbtn" href="#home"><span class="ico">⌂</span>HOME</a>
+<a class="navbtn" href="#days"><span class="ico">▦</span>DAYS</a>
+<a class="navbtn" href="#explore"><span class="ico">⌕</span>PLACES</a>
+<a class="navbtn" href="#coffee"><span class="ico">✦</span>COFFEE</a>
+<a class="navbtn" href="#night"><span class="ico">●</span>NIGHT</a>
+<a class="navbtn" href="#move"><span class="ico">↔</span>MOVE</a>
+</div></nav>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Saved places (enhancement only)
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('ams26saved') || '[]'); } catch(e) {}
+  document.querySelectorAll('[data-save]').forEach(function(btn){
+    if (saved.indexOf(btn.dataset.save) >= 0) btn.classList.add('saved');
+    btn.addEventListener('click', function(){
+      const id = btn.dataset.save;
+      const i = saved.indexOf(id);
+      if (i >= 0) { saved.splice(i,1); btn.classList.remove('saved'); }
+      else { saved.push(id); btn.classList.add('saved'); }
+      try { localStorage.setItem('ams26saved', JSON.stringify(saved)); } catch(e) {}
+      const t=document.createElement('div'); t.className='toast'; t.textContent=btn.classList.contains('saved')?'Salvato':'Rimosso';
+      document.body.appendChild(t); setTimeout(function(){t.remove()},1200);
+    });
+  });
+
+  // Places search/filter (enhancement only)
+  const search = document.getElementById('placeSearch');
+  const filterBtns = document.querySelectorAll('#placeFilters button');
+  let active='all';
+  function apply(){
+    const q=(search.value||'').toLowerCase();
+    document.querySelectorAll('#placesGrid .place').forEach(function(card){
+      const tags=(card.dataset.tags||'').split(' ');
+      const matchesFilter=active==='all'||tags.indexOf(active)>=0;
+      const matchesSearch=(card.dataset.search||'').indexOf(q)>=0 || card.textContent.toLowerCase().indexOf(q)>=0;
+      card.style.display=(matchesFilter&&matchesSearch)?'flex':'none';
+    });
+  }
+  if(search) search.addEventListener('input',apply);
+  filterBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      filterBtns.forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active'); active=b.dataset.f; apply();
+    });
+  });
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function () {});
+  });
+}
+</script>
+
+</body></html>
